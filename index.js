@@ -10,7 +10,7 @@ app.use(express.static(__dirname + '/public'));
 app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
 
-app.get('/', function(request, response) {
+app.get('/cool', function(request, response) {
     var result = ''
     var times = process.env.TIMES || 5
     for (i = 0; i < times; i++)
@@ -19,8 +19,9 @@ app.get('/', function(request, response) {
     //response.render('pages/index');
 });
 
-app.get('/cool', function(request, response) {
-    response.send(cool());
+app.get('/', function(request, response) {
+    //response.sendFile(__dirname + '/index.html');
+    response.render('pages/index', {title:'Testsida med Node Express och EJS-template engine'});
 });
 
 app.listen(app.get('port'), function() {
