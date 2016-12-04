@@ -21,7 +21,7 @@ app.get('/cool', function(request, response) {
 
 app.get('/', function(request, response) {
     //response.sendFile(__dirname + '/index.html');
-    response.render('pages/index', {title:'Testsida med Node Express och EJS-template engine!'});
+    response.render('pages/index', {title:'Testsida med Node Express och EJS-template engine!!!'});
 });
 
 app.listen(app.get('port'), function() {
